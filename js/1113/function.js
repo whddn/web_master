@@ -19,7 +19,7 @@ function calculateFunc(parameter1, parameter2, parameter3) {
 //return은 뭐에요?
 // 10 + 20 => ?
 // 5 + 7 => ?
-function sum(num1, num2){
+function sum(num1, num2) {
   let result = num1 + num2;
   return result;
 }

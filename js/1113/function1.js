@@ -28,6 +28,13 @@ function sum(param1, param2) {
 
 //console.log(getMaxvalue(numAry1)); => 70
 
-function maxNum(){
-  
+function getMaxvalue(param){
+  let max =0;
+  for(let i = 0; i< param.length; i++){
+    if(max < param[numAry1]){
+      max += param[numAry1]
+    }
+  }
+  return max;
 }
+console.log(getMaxvalue(numAry1));
