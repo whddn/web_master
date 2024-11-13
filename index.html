@@ -1,24 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
-    #show{
+    #show {
       width: 100px;
       height: 100px;
-     
+
     }
-  
   </style>
 </head>
-<body>
-  <span>친구이름:</span> <input id="inputValue">
-  <button onclick="addFriendFnc()" id="addBtn">등록</button>
-  <div id="show">
 
+<body>
+  <span>친구이름:</span> <input id="name">
+  <span>나이:</span> <input id="age">
+  <button onclick="friendListFnc()" id="addBtn">등록</button>
+
+  <div id="show">
+    <!-- <p>홍길동</p> : innerHTML -->
+    <!-- <table border ="2">
+      <thead>
+        <tr>
+          <th>이름</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>홍길동</td>
+        </tr>
+        <tr>
+          <td>김길동</td>
+        </tr>
+        <tr>
+          <td>박길동</td>
+        </tr>
+        <tr>
+          <td>최길동</td>
+        </tr>
+      </tbody>
+    </table> -->
+    <span>결과값1:</span><p class="result">(innerHTML 영역)</p>
+
+    <span>결과값2:</span>
+    <div class="value">(innerHTML 영역)</div>
   </div>
-  <script src="js/1112/exe4.js"></script>
+  <script src="js/1113/function1.js"></script>
+
 </body>
 </html>
