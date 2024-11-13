@@ -7,18 +7,26 @@ document.querySelector('#inputValue').remove(); //요소 삭제
 document.querySelector('#addBtn').remove();
 document.querySelector('span').remove();
 
-let sum = 0;
-let avg = 0;
-let max = 0;
-let min = 100;
-
 let num = [];
 
-for (let i = 0; i < 5; i++) {
-  let grade = prompt("성적을 입력하세요")
+for (let i = 1; i <= 5; i++) {
+  let grade = parseInt(prompt("성적을 입력하세요"))
   num.push(grade);
 }
-if()
+
+let sum = 0, max = 0 ,min = num[0], avg = 0;
+
+// 배열갯수만큼 반복
+for (let i = 0; i < num.length; i++) {
+  sum += num[i];
+  if (max < num[i]) { //최대값
+    max = num[i];
+  }
+  if (min > num[i]) { // 최소값
+    min = num[i];
+  }
+}
 avg = sum / num.length;
+avg = parseInt(avg);
 
 console.log(`우리반 평균은 ${avg}이고, 최고점은 ${max}이고, 최저점은 ${min}이다`);
