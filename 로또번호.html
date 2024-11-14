@@ -38,16 +38,16 @@
         <h1>로또 번호 발생기</h1>
         <button type="button" id="btn">클릭</button>
         <div id="lotto">
-            <span>23</span>
-            <span>33</span>
+            <span></span>
+            <span></span>
         </div>
     </div>
     <script>
-        // 임의의 숫자 6개 생성: 1 ~ 45 범위
+        // 임의의 숫자 6개 생성: 1 ~ 99 범위
         function randomNumber() {
             let numAry = []
             for (let i = 0; i < 6;) {
-                let temp = parseInt(Math.random() * 45) + 1
+                let temp = parseInt(Math.random() * 99) + 1
                 // let exists = false;
                 // 기존에 동일한 값이 있는지 체크
                 // for (let j = 0; j < i; j++) {
@@ -66,14 +66,20 @@
 
         //이벤트 등록
         document.querySelector('#btn').addEventListener('click', (e) => {
-            let ary = randomNumber();
-            let str = '';
-            for (let i = 0; i < ary.length; i++) {
-                str += '<span>' + ary[i] + '</span>'
-            }
-            document.querySelector('#lotto').innerHTML = str;
+
+            
+            
+
+
+
+    //         let ary = randomNumber();
+    //         let str = '';
+    //         for (let i = 0; i < ary.length; i++) {
+    //             str += '<span>' + ary[i] + '</span>'
+    //         }
+    //         document.querySelector('#lotto').innerHTML = str;
         })
-    </script>
+    // </script>
 </body>
 
 </html>
