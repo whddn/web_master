@@ -48,57 +48,41 @@
     </div>
     <script>
         // 1. button 클릭하는 이벤트
-            document.querySelector('#btn').addEventListener('click', (e) => {
-                let ary = generateNubmer();
-                let str = '';
-                for(let i=0; i<=ary.length; i++){
-                    str += '<span>' + ary[i] + '</span>'
-                }
-                document.querySelector('#lotto').innerHTML = str
-            })
-        // 2. function generateNubmer() => 1~45까지의 임의의 수를 6개
-            function generateNubmer(){
-                let numAry = []
-                for(let i=1; i<=6; i++){
-                   let temp =  parseInt(Math.random() * 45) + 1
-                    numAry.push(temp); //numAry[i] = temp;
-                }
-                return numAry;
+        document.querySelector('#btn').addEventListener('click', (e) => {
+            let ary = generateNubmer();
+            let str = '';
+            for (let i = 0; i < ary.length; i++) {
+                str += '<span>' + ary[i] + '</span>'
             }
+            document.querySelector('#lotto').innerHTML = str
+        })
+        // 2. function generateNubmer() => 1~45까지의 임의의 수를 6개
+        function generateNubmer() {
+            let numAry = []
+            for (let i = 0; i < 6;) {
+                let temp = parseInt(Math.random() * 45) + 1
+                if (dupValueCheck(numAry, temp) == -1) {
+                    numAry[i] = temp; // numAry.push(temp); 
+                    i++; // 추가할 경우에만 i를 증가
+                }
+            }
+            return numAry;
+        }
+        // 3. 중복값 제거 함수
+        function dupValueCheck(ary = [], checkNum = 0) {
+            // 배열, 값 체크기능
+            // 배열에 찾는값이 있으면 인덱스값을 반환, 없으면 -1 반환
+            for (let i = 0; i < ary.length; i++) {
+                if (ary[i] == checkNum) { // 찾는 값이 있다면 의미
+                    return i;
+                }
+            }
+            return -1; // 찾는 값이 없다는 의미
+        }
 
-
-
-
-        // 임의의 숫자 6개 생성: 1 ~ 99 범위
-        // function randomNumber() {
-        //     let numAry = []
-        //     for (let i = 0; i < 6;) {
-        //         let temp = parseInt(Math.random() * 99) + 1
-        //         // let exists = false;
-        //         // 기존에 동일한 값이 있는지 체크
-        //         // for (let j = 0; j < i; j++) {
-        //         //     if (numAry[j] == temp) {
-        //         //         exists = true;
-        //         //     }
-        //         // }
-        //         // if (exists) {
-        //         //     continue;
-        //         // }
-        //         numAry.push(temp)
-        //         i++;
-        //     }
-        //     return numAry;
-        // }
-
-        // //이벤트 등록
-        // document.querySelector('#btn').addEventListener('click', (e) => {
-        //     let ary = randomNumber();
-        //     let str = '';
-        //     for (let i = 0; i < ary.length; i++) {
-        //         str += '<span>' + ary[i] + '</span>'
-        //     }
-        //     document.querySelector('#lotto').innerHTML = str;
-        // })
+        // let tempAry = [20, 45, 30, 17]
+        // let num = 45;
+        // console.log(dupValueCheck(tempAry, num))
     </script>
 </body>
 
