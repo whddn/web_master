@@ -61,7 +61,7 @@
             let numAry = []
             for (let i = 0; i < 6;) {
                 let temp = parseInt(Math.random() * 45) + 1
-                if (dupValueCheck(numAry, temp) == -1) {
+                if (numAry.indexOf(temp) == -1) {
                     numAry[i] = temp; // numAry.push(temp); 
                     i++; // 추가할 경우에만 i를 증가
                 }
