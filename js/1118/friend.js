@@ -88,9 +88,16 @@ document.querySelector('button:nth-of-type(2)').addEventListener('click', (e)=>{
 document.querySelector('button.btn.btn-danger').addEventListener('click', (e)=>{
   // #list input[type="checkbox"]
   document.querySelectorAll('#list tr').forEach((item) => {
-    console.log(item.children[0].children[0])
+    console.log(item.children)
     if(item.children[0].children[0].checked){
       item.remove();
     }
   });
+})
+
+// 전체선택하는 이벤트 추가. change 이벤트
+document.querySelector('#list input').addEventListener('change', (e)=>{
+  document.querySelectorAll('thead input').forEach((item)=>{
+    item.checked;
+  })
 })
