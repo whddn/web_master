@@ -19,6 +19,26 @@ function makeRow(friendInfo = {
   let btn = document.createElement('input')
   btn.setAttribute('type', 'checkbox')
   btn.addEventListener('click', (e) => e.stopPropagation());
+  btn.addEventListener('change', (e) => {
+    // head 체크박스의 값 => false
+    // body 체크박스의 값중에 하나라도 false => 변경
+    document.querySelector('thead input[type="checkbox"]').checked = true
+    document.querySelectorAll('tbody input[type="checkbox"]').forEach(item => {
+      if (!item.checked) {
+        document.querySelector('thead input[type="checkbox"]').checked = false;
+      }
+    })
+  })
+  // 체크박스의 갯수와 체크된 체크박스의 갯수 => true / false
+  // let chks = document.querySelectorAll('tbody input[type="checkbox"]');
+  // let chkeds = document.querySelectorAll('tbody input[type="checkbox"]:checked')
+            // chks. length == chkeds.length ? true : false ; 밑에꺼랑 같은코드 //
+  // if(chks.length == chkeds.length){
+  //   document.querySelector('thead input[type="checkbox"]').checked = true
+  // }else{
+  //   document.querySelector('thead input[type="checkbox"]').checked = false
+  // }
+
   td.appendChild(btn)
   tr.appendChild(td)
 
