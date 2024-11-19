@@ -156,13 +156,14 @@
       }
 
       let li = document.createElement('li')
+      // li.className = 'basic'// <li class ="basic">...</li>
       li.innerText = inputValue
       let span = document.createElement('span')
       span.innerText = '❎'
       span.setAttribute('class', 'close')
       li.appendChild(span)
 
-      // 새로 추가한 태그 밑줄 없애기
+      // 클릭이벤트 등록
       li.addEventListener('click', e => {
         if (e.target.tagName == "LI") {
           //<li class = "btn btn-primary">Test</li>
