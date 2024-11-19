@@ -22,7 +22,8 @@ function makeRow(friendInfo = {
   btn.addEventListener('change', (e) => {
     // head 체크박스의 값 => false
     // body 체크박스의 값중에 하나라도 false => 변경
-    document.querySelector('thead input[type="checkbox"]').checked = true
+    document.querySelector('thead input[type="checkb
+      ox"]').checked = true
     document.querySelectorAll('tbody input[type="checkbox"]').forEach(item => {
       if (!item.checked) {
         document.querySelector('thead input[type="checkbox"]').checked = false;
@@ -132,4 +133,24 @@ document.querySelector('thead input[type="checkbox"]').addEventListener('change'
   document.querySelectorAll('tbody input[type="checkbox"]').forEach((item) => {
     item.checked = e.target.checked
   });
+
+
+
+
+  // 정보저장버튼 클릭하면 친구의 정보를 localStorage에 저장
+  document.querySelector('button.btn-info').addEventListener('click', e =>{
+    let ary = [];
+    document.querySelectorAll('#list tr').forEach(item => {
+      console.log(item)
+      let name = item.children[1].innerHTML; //이름
+      let phone = item.children[2].innerHTML; //연락처
+      let birth = item.children[3].innerHTML; //생일
+      let btype = item.children[4].innerHTML; //생일
+      let obj = {name, phone, birth, btype}
+      ary.push(obj)
+    });
+    console.log(ary)
+    let json = JSON.stringify(ary)
+    localStorage.setItem('friendList', json)
+  })
 })
