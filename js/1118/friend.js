@@ -22,8 +22,7 @@ function makeRow(friendInfo = {
   btn.addEventListener('change', (e) => {
     // head 체크박스의 값 => false
     // body 체크박스의 값중에 하나라도 false => 변경
-    document.querySelector('thead input[type="checkb
-      ox"]').checked = true
+    document.querySelector('thead input[type="checkbox"]').checked = true
     document.querySelectorAll('tbody input[type="checkbox"]').forEach(item => {
       if (!item.checked) {
         document.querySelector('thead input[type="checkbox"]').checked = false;
@@ -133,7 +132,7 @@ document.querySelector('thead input[type="checkbox"]').addEventListener('change'
   document.querySelectorAll('tbody input[type="checkbox"]').forEach((item) => {
     item.checked = e.target.checked
   });
-
+})
 
 
 
@@ -153,4 +152,3 @@ document.querySelector('thead input[type="checkbox"]').addEventListener('change'
     let json = JSON.stringify(ary)
     localStorage.setItem('friendList', json)
   })
-})

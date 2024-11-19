@@ -62,8 +62,9 @@
 
     document.querySelector('button').addEventListener('click', e => {
 
-      let json = JOSN.stringify(ary)
+      let json = JSON.stringify(ary)
       localStorage.getItem('friendList')
+      console.log(localStorage.getItem('friendList'))
       
     })
   </script>
