@@ -27,23 +27,30 @@
   <script>
     //
     document.querySelector('#moveRight').addEventListener('click', e => {
-      let select = document.querySelectorAll('select option')[document.querySelector('select').selectedIndex]
-      document.querySelector('select:nth-of-type(2)').appendChild(select)
+      let target = document.querySelector('select:nth-of-type(2)')
+      while(true){
+        let idx = document.querySelector('select').selectedIndex
+        console.log(idx)
+        if(idx == -1){
+          break
+        }
+        target.appendChild(document.querySelectorAll('select option')[idx])
+      }
     })
+      // let select = document.querySelectorAll('select option')[document.querySelector('select').selectedIndex]
+      // document.querySelector('select:nth-of-type(2)').appendChild(select)
 
 
     document.querySelector('#moveLeft').addEventListener('click', e => {
       // 선택한 순번
       let idx = document.querySelector('select:nth-of-type(2)').selectedIndex
       if(idx > 0){ //선택된 값이 있을경우에만 아래 코드를 실행하도록
-        let target = document.querySelector('select') // 옮겨갈 대상
+        let target = document.querySelector('select') // 옮겨갈 대상 첫번째 select
         target.appendChild(document.querySelectorAll('select:nth-of-type(2) option')[idx])
       }
+    })
     //   let select = document.querySelectorAll('select option')[document.querySelector('select').selectedIndex]
     //  document.querySelector('select:nth-of-type(2)').appendChild(select)
-    })
-
-
 
     //
   </script>
