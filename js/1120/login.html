@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <table border="2">
+    <tr>
+      <th>아이디</th>
+      <td><input type="text" name="uid" id="uid"></td>
+    </tr>
+    <tr>
+      <th>비밀번호</th>
+      <td><input type="password" name="upw" id="upw"></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="center">
+        <button>로그인</button>
+      </td>
+    </tr>
+  </table>
+
+  <script>
+    let members = [{
+        id: 'user01',
+        pw: '1111',
+        name: '사용자1'
+      },
+      {
+        id: 'user02',
+        pw: '2222',
+        name: '사용자2'
+      },
+      {
+        id: 'user03',
+        pw: '3333',
+        name: '사용자3'
+      }
+    ]
+
+    // code 시작
+      // 1. 이벤트등록
+      // 2. 사용자 입력값(2개) 변수저장
+      // 3. 배열에 각각의 값을 비교
+
+      // filter를 써서 해보기
+      
+
+    // document.querySelector('button').addEventListener('click', e => {
+    //   let uid = document.querySelector('#uid').value
+    //   let upw = document.querySelector('#upw').value
+
+    //   for(let i=0; i<members.length; i++){
+    //     if(uid == members[i].id && upw == members[i].pw){
+    //       alert('로그인이 됐습니다')
+    //     }
+    //     else if(uid == members[i].id && upw != members[i].pw){
+    //       alert('비밀번호가 틀렸습니다')
+    //     }
+    //     else if(uid != members[i].id && upw == members[i].pw)
+    //     alert('아이디가 틀렸습니다')
+    //   }
+      // document.querySelector('#uid').value = ''
+      // document.querySelector('#upw').value = ''
+    // })
+     
+
+   
+  </script>
+</body>
+
+</html>
