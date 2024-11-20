@@ -41,7 +41,7 @@
     // let json = JSON.stringify(ary)
     document.querySelector('button').addEventListener('click', e => {
       let json = localStorage.getItem('friendList')
-      let ary = JSON.parse(json);
+      let ary = JSON.parse(json); //4건
       ary.forEach(friend => {
         let template = document.querySelector('div.row>div.col-sm-3').cloneNode(true);
         template.querySelector('img').setAttribute('src', '../../img/' + friend.name + '.jpg')
