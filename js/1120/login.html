@@ -44,17 +44,22 @@
     ]
 
     // code 시작
-      // 1. 이벤트등록
-      // 2. 사용자 입력값(2개) 변수저장
-      // 3. 배열에 각각의 값을 비교
+    // 1. 이벤트등록
+    // 2. 사용자 입력값(2개) 변수저장
+    // 3. 배열에 각각의 값을 비교
 
-      // filter를 써서 해보기
-      
+    // filter를 써서 해보기
+    let result = members.filter(member => {
+      return member.id == uid && member.pw == upw;
+    })
+
+    if(result.length){ // false = 0, '', null, undefined,   0이 아닌값은 true
+      alert('성공')
+    }else{
+      alert('실패')
+    }
 
     // document.querySelector('button').addEventListener('click', e => {
-    //   let uid = document.querySelector('#uid').value
-    //   let upw = document.querySelector('#upw').value
-
     //   for(let i=0; i<members.length; i++){
     //     if(uid == members[i].id && upw == members[i].pw){
     //       alert('로그인이 됐습니다')
@@ -65,12 +70,30 @@
     //     else if(uid != members[i].id && upw == members[i].pw)
     //     alert('아이디가 틀렸습니다')
     //   }
-      // document.querySelector('#uid').value = ''
-      // document.querySelector('#upw').value = ''
+    document.querySelector('#uid').value = ''
+    document.querySelector('#upw').value = ''
     // })
-     
 
-   
+    //교수님이 하신거
+    // document.querySelector('button').addEventListener('click', e => {
+
+
+    //   let uid = document.querySelector('#uid').value
+    //   let upw = document.querySelector('#upw').value
+
+    //   let isOk = false // 반복적으로 경고창으로 뜨는거 한번만 보이도록 하기위해서
+    //   for (let i = 0; i < members.length; i++) {
+    //     if (members[i].id == uid && members[i].pw == upw) {
+    //       isOk = true
+    //       break
+    //     }
+    //   }
+    //   if (isOk) {
+    //     alert('OK')
+    //   } else {
+    //     alert('No')
+    //   }
+    // }) 
   </script>
 </body>
 
