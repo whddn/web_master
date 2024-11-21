@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome</title>
+</head>
+<body>
+  <h3>Welcome 페이지</h3>
+
+  <a href="login.html">로그인 페이지</a>
+  <script>
+    let logId = localStorage.getItem('logId')
+    let logName = localStorage.getItem('logName')
+    alert(`${logName}님 환영합니다`)
+    document.querySelector('h3').innerText += ` (${logId})`
+  </script>
+</body>
+</html>
