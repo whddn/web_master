@@ -49,11 +49,25 @@
         let id = localStorage.getItem('logId')
         let pcode = e.target.closest('div.col').getAttribute('data-pcode') //closest : 태그를 가져오겠다
         console.log(item, id, pcode)
+        // 장바구니에 id, pcode 이미 있으면 수량증가
+        let result = cartData.filter(cart => cart.id == id && cart.pcode == pcode)
+        if(result.length){ // 있으면 수량증가
+          cartData.forEach(cart => {
+            if(cart.id == id && cart.pcode == pcode){
+              cart.qty++ // 기존수량에 1 더하기
+              return;
+            }
+          })
+        }else{
+        // 없으면 추가
         cartData.push({
           id: id,
           pcode: pcode,
           qty: 1
         })
+      }
+
+      // 스토리지에 저장
         localStorage.setItem('cartData', JSON.stringify(cartData)) // 저장
       })
     })

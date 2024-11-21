@@ -90,8 +90,7 @@
   </div>
 
   <script>
-    
-      let template = ` <tr>
+    let template = ` <tr>
                             <th scope="row">
                                 <div class="d-flex align-items-center">
                                     <img src="images/grape.jpg" class="img-fluid me-5 rounded-circle"
@@ -129,11 +128,11 @@
                                 </button>
                             </td>
                         </tr> `
-      
 
-    const cartData = JSON.parse(localStorage.getItem('cartData'))
+
+    let cartData = JSON.parse(localStorage.getItem('cartData'))
     const productData = JSON.parse(localStorage.getItem('productData'))
-    
+
     // 로그인정보(logId)
     const logId = localStorage.getItem('logId')
     document.querySelector('h3').innerHTML += `(${logId})`
@@ -189,6 +188,8 @@
     // 더하기 아이콘 클릭이벤트 등록
     document.querySelectorAll('i.fa-plus').forEach(plusIcon => {
       plusIcon.addEventListener('click', e => {
+        let pcode = e.target.closest('tr').getAttribute('data-pcode')
+
         console.dir(e.target.closest('div.quantity').children[1].value)
         // 현재수량 + 1
         let currentQty = parseInt(e.target.closest('div.quantity').children[1].value)
@@ -201,12 +202,15 @@
         e.target.closest('tr').children[4].firstElementChild.innerText = price * currentQty + "원"
 
         totalSum();
+        saveQty(logId, pcode, 1)
       })
     })
 
     // 빼기 아이콘 클릭 등록
     document.querySelectorAll('i.fa-minus').forEach(plusIcon => {
       plusIcon.addEventListener('click', e => {
+        let pcode = e.target.closest('tr').getAttribute('data-pcode')
+
         console.dir(e.target.closest('div.quantity').children[1].value)
         // 현재수량 - 1
         let currentQty = parseInt(e.target.closest('div.quantity').children[1].value)
@@ -218,6 +222,7 @@
         e.target.closest('tr').children[4].firstElementChild.innerText = price * currentQty + "원"
 
         totalSum();
+        saveQty(logId, pcode, -1)
       })
     })
 
@@ -226,18 +231,30 @@
       icon.addEventListener('click', e => {
         let pcode = e.target.closest('tr').getAttribute('data-pcode')
         e.target.closest('tr').remove()
-        totalSum();
 
-        // localStorage에도 반영. cartData 전체카드정보. id, pcode 같은 값을 삭제 저장
-        // logId, pcode
-        console.log(logId, pcode)
-        let removeData = cartData.filter(cart => !(cart.pcode == pcode && cart.id == logId))
-        localStorage.setItem('cartData', JSON.stringify(removeData))
+        totalSum();
+        removeCart(logId, pcode)
       })
     })
 
+    // 수량변경 저장
+    function saveQty(logId, pcode, qty){
+      cartData.forEach(cart => {
+        if(cart.id == logId && cart.pcode == pcode){
+          cart.qty += qty;
+        }
+      })
+      localStorage.setItem('cartData', JSON.stringify(cartData))
+    }
+
+    // 삭제된 정보 저장
+    function removeCart(logId, pcode) {
+      cartData = cartData.filter(cart => !(cart.pcode == pcode && cart.id == logId))
+      localStorage.setItem('cartData', JSON.stringify(cartData))
+    }
+
     // 합계금액 계산
-    function totalSum(){
+    function totalSum() {
       // 각 tr의 금액부분("4000 원") -> "4000" -> 4000 변경 후 합계
       let sum = 0;
       document.querySelectorAll('tr>td:nth-of-type(4)').forEach(item => {
@@ -249,8 +266,6 @@
       document.querySelector('p.mb-0.pe-4').innerText = sum + "원"
     }
     totalSum();
-
-
   </script>
 </body>
 
