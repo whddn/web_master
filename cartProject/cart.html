@@ -131,27 +131,31 @@
       
 
     const cartData = JSON.parse(localStorage.getItem('cartData'))
+    const productData = JSON.parse(localStorage.getItem('productData'))
+    
     // 로그인정보(logId)
     const logId = localStorage.getItem('logId')
-    document.querySelector('h3').innerHTML += `${logId}`
+    document.querySelector('h3').innerHTML += `(${logId})`
 
     // 로그인한 사용자의 장바구니 정보만 가져오기
     const myCart = cartData.filter(cart => cart.id == logId)
     console.log(myCart)
 
     myCart.forEach(cart => {
+      let prodInfo = productData.filter(prod => cart.pcode == prod.pcode)[0]
+
       let template = ` <tr>
                             <th scope="row">
                                 <div class="d-flex align-items-center">
-                                    <img src="images/grape.jpg" class="img-fluid me-5 rounded-circle"
+                                    <img src="images/${prodInfo.image}" class="img-fluid me-5 rounded-circle"
                                         style="width: 80px; height: 80px;" alt="">
                                 </div>
                             </th>
                             <td>
-                                <p class="mb-0 mt-4">Awesome Brocoli</p>
+                                <p class="mb-0 mt-4">${prodInfo.pname}</p>
                             </td>
                             <td>
-                                <p class="mb-0 mt-4">2.99 $</p>
+                                <p class="mb-0 mt-4">${prodInfo.price}원</p>
                             </td>
                             <td>
                                 <div class="input-group quantity mt-4" style="width: 100px;">
@@ -161,7 +165,7 @@
                                         </button>
                                     </div>
                                     <input type="text" class="form-control form-control-sm text-center border-0"
-                                        value="1">
+                                        value="${cart.qty}">
                                     <div class="input-group-btn">
                                         <button class="btn btn-sm btn-plus rounded-circle bg-light border">
                                             <i class="fa fa-plus"></i>
@@ -170,7 +174,7 @@
                                 </div>
                             </td>
                             <td>
-                                <p class="mb-0 mt-4">2.99 $</p>
+                                <p class="mb-0 mt-4">${prodInfo.price * cart.qty}원</p>
                             </td>
                             <td>
                                 <button class="btn btn-md rounded-circle bg-light border mt-4">
@@ -181,6 +185,34 @@
       document.querySelector('tbody').insertAdjacentHTML("beforeend", template)
     })
 
+    // 더하기 아이콘 클릭이벤트 등록
+    document.querySelectorAll('i.fa-plus').forEach(plusIcon => {
+      plusIcon.addEventListener('click', e => {
+        console.dir(e.target.closest('div.quantity').children[1].value)
+        // 현재수량 + 1
+        let currentQty = parseInt(e.target.closest('div.quantity').children[1].value)
+        currentQty++
+        e.target.closest('div.quantity').children[1].value = currentQty;
+        // e.target.closest('div.quantity').children[1].value = e.target.parentElement.parentElement.previousElementSibling.value
+        // 가격
+        let price = e.target.closest('tr').children[2].firstElementChild.innerText
+        price = parseInt(price.replace('원', '')) // 2000원 -> 2000
+
+        e.target.closest('tr').children[4].firstElementChild.innerText = price * currentQty + "원"
+      })
+    })
+
+    // 빼기 아이콘 클릭 등록
+    document.querySelectorAll('i.fa-minus').forEach(plusIcon => {
+      plusIcon.addEventListener('click', e => {
+        console.dir(e.target.closest('div.quantity').children[1].value)
+        // 현재수량 - 1
+        let currentQty = parseInt(e.target.closest('div.quantity').children[1].value)
+        currentQty--
+        e.target.closest('div.quantity').children[1].value = currentQty;
+        // e.target.closest('div.quantity').children[1].value = e.target.parentElement.parentElement.previousElementSibling.value
+      })
+    })
 
     //
   </script>
