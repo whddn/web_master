@@ -72,6 +72,11 @@
       },
       {
         id: 'user01',
+        pcode: 'P003',
+        qty: 5
+      },
+      {
+        id: 'user01',
         pcode: 'P002',
         qty: 3
       },
@@ -79,6 +84,16 @@
         id: 'user02',
         pcode: 'P001',
         qty: 3
+      },
+      {
+        id: 'user02',
+        pcode: 'P004',
+        qty: 2
+      },
+      {
+        id: 'user02',
+        pcode: 'P007',
+        qty: 4
       }
     ]
 
