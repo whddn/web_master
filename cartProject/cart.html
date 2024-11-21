@@ -31,7 +31,7 @@
 
 <body>
   <h3>cart</h3>
-  <a href="welcome.html">메인페이지</a>
+  <a href="welcome.html" align="center">메인페이지</a>
 
   <div class="container-fluid py-5">
     <div class="container py-5">
@@ -135,13 +135,14 @@
 
     // 로그인정보(logId)
     const logId = localStorage.getItem('logId')
-    document.querySelector('h3').innerHTML += `(${logId})`
+    document.querySelector('h3').innerText += `(${logId})`
 
     // 로그인한 사용자의 장바구니 정보만 가져오기
     const myCart = cartData.filter(cart => cart.id == logId)
     console.log(myCart)
 
     myCart.forEach(cart => {
+      // 카트의 상품코드를 이용해서 상품정보 가져오기
       let prodInfo = productData.filter(prod => cart.pcode == prod.pcode)[0]
 
       let template = ` <tr data-pcode ="${cart.pcode}">
@@ -184,6 +185,8 @@
                         </tr> `
       document.querySelector('tbody').insertAdjacentHTML("beforeend", template)
     })
+
+    // 화면에 이벤트 등록
 
     // 더하기 아이콘 클릭이벤트 등록
     document.querySelectorAll('i.fa-plus').forEach(plusIcon => {
