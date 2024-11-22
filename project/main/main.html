@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,21 +8,17 @@
   <link rel="stylesheet" href="main.css">
 </head>
 <body>
-  <script src="login.js"></script>
-
   <header>
     <nav>
       <ul>
-        <li><a href="#">상품목록</a></li>
+        <li><a href="/project/product/product.html">상품목록</a></li>
         <li><a href="#">장바구니</a></li>
         <li><a href="#">게시판</a></li>
         <li><a href="/project/login/login.html">로그인</a></li>
       </ul>
     </nav>
   </header>
-  <aside>
-
-  </aside>
+  
   <section>
 
   </section>
@@ -30,8 +27,12 @@
   </footer>
   <script>
     localStorage.setItem('memberData', JSON.stringify(memberData));
+    localStorage.setItem('productData', JSON.stringify(productData));
+    localStorage.setItem('cartData', JSON.stringify(cartData));
+
     let logId = localStorage.getItem('logId')
     let logName = localStorage.getItem('logName')
   </script>
 </body>
+
 </html>

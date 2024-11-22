@@ -14,6 +14,3 @@ document.querySelector('button.submit-btn').addEventListener('click', e => {
     alert('입력정보를 확인하세요!')
   }
 })
-
-    localStorage.setItem('productData', JSON.stringify(productData));
-    localStorage.setItem('cartData', JSON.stringify(cartData));
