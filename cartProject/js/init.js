@@ -88,14 +88,21 @@
       {
         id: 'user02',
         pcode: 'P004',
-        qty: 2
+        qty: 4
       },
       {
         id: 'user02',
         pcode: 'P007',
-        qty: 4
+        qty: 2
       }
     ]
+
+    Number.prototype.format = function (){
+      let strAry = ('' + this).split('')
+      strAry.reverse().forEach(word => {
+
+      })
+    }
 
     // 객체의 정보를 활용해서 row 생성.
     function makeRow(obj = {}) {
