@@ -1,5 +1,4 @@
 *{
-  box-sizing: border-box;
   font-family: "맑은 고딕";
   text-align: center;
 }
@@ -37,3 +36,10 @@ nav a:hover{
   border-radius: 20px;
 }
 /* nav 바 */
+img{
+  width: 500px;
+  height: 500px;
+  object-fit: cover;
+}
+.carousel.slide{
+}

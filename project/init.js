@@ -1,15 +1,15 @@
     // id, pw, name
-    const memberData = [{
+   let memberData = [{
         id: 'user01',
         pw: '1111',
         name: '사용자1',
-        responsibility: 'User'
+        responsibility: 'User01'
       },
       {
         id: 'user02',
         pw: '2222',
         name: '사용자2',
-        responsibility: 'User'
+        responsibility: 'User02'
       },
       {
         id: 'user03',
@@ -20,52 +20,52 @@
     ]
 
     // pcode, pname, price
-    const productData = [{
+    let productData = [{
         pcode: 'P001',
-        pname: '사과',
-        price: 2000,
-        image: 'apple.jpg'
+        pname: '상의1',
+        price: 10000,
+        image: 'clothes1.jpg'
       },
       {
         pcode: 'P002',
-        pname: '참외',
+        pname: '상의2',
         price: 1500,
-        image: 'koreamelon.jpg'
+        image: 'clothes2.jpg'
       },
       {
         pcode: 'P003',
-        pname: '복숭아',
+        pname: '상의3',
         price: 2500,
-        image: 'peach.jpg'
+        image: 'clothes3.jpg'
       },
       {
         pcode: 'P004',
-        pname: '수박',
+        pname: '하의1',
         price: 5000,
-        image: 'watermelon.jpg'
+        image: 'clothes4.jpg'
       },
       {
         pcode: 'P005',
-        pname: '바나나',
+        pname: '하의2',
         price: 1500,
-        image: 'banana.jpg'
+        image: 'clothes5.jpg'
       },
       {
         pcode: 'P006',
-        pname: '포도',
+        pname: '하의3',
         price: 2500,
-        image: 'grape.jpg'
+        image: 'clothes6.jpg'
       },
       {
         pcode: 'P007',
-        pname: '망고',
+        pname: '하의4',
         price: 3500,
-        image: 'mango.jpg'
+        image: 'clothes7.jpg'
       }
     ]
 
     // id, pcode, qty
-    const cartData = [{
+    let cartData = [{
         id: 'user01',
         pcode: 'P001',
         qty: 2

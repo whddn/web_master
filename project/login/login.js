@@ -1,4 +1,5 @@
-const memberData = JSON.parse(localStorage.getItem('memberData'))
+let memberData = JSON.parse(localStorage.getItem('memberData'))
+
 
 document.querySelector('button.submit-btn').addEventListener('click', e => {
   let id = document.querySelector('#uid').value;

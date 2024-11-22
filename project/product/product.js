@@ -1,7 +1,9 @@
 let productData = JSON.parse(localStorage.getItem('productData')) // 상품목록
-let cartData = JSON.parse(localStorage.getItem('cartData')) // 장바구니목록
+// cartData = JSON.parse(localStorage.getItem('cartData')) // 장바구니목록
+
 
 productData.forEach(product => {
+  console.log(product)
   let template = `<div class="col" data-pcode="${product.pcode}">
     <div class="card" style="width: 18rem;">
       <img src="images/${product.image}" height="210px" class="card-img-top" alt="...">
