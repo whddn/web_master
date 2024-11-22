@@ -1,24 +1,19 @@
-function resetClass(element, classname){
-  element.classList.remove(classname);
-}
-document.getElementsByClassName("show-signup")[0].addEventListener("click",function(){
-  let form = document.getElementsByClassName("form")[0];
-  resetClass(form, "signin");
-  resetClass(form, "reset");
-  form.classList.add("signup");
-  document.getElementById("submit-btn").innerText = "Sign Up";
-});
-document.getElementsByClassName("show-signin")[0].addEventListener("click",function(){
-  let form = document.getElementsByClassName("form")[0];
-  resetClass(form, "signup");
-  resetClass(form, "reset");
-  form.classList.add("signin");
-  document.getElementById("submit-btn").innerText = "Sign In";
-});
-document.getElementsByClassName("show-reset")[0].addEventListener("click",function(){
-  let form = document.getElementsByClassName("form")[0];
-  resetClass(form, "signup");
-  resetClass(form, "signin");
-  form.classList.add("reset");
-  document.getElementById("submit-btn").innerText = "Reset password";
-});
+const memberData = JSON.parse(localStorage.getItem('memberData'))
+
+document.querySelector('button.submit-btn').addEventListener('click', e => {
+  let id = document.querySelector('#uid').value;
+  let pw = document.querySelector('#upw').value;
+
+  let loginInfo = memberData.filter(member => member.id == id && member.pw == pw)
+
+  if (loginInfo.length) { // id, pw 동일한 정보가 있다는 의미
+    localStorage.setItem('logId', id)
+    localStorage.setItem('logName', loginInfo[0].name)
+    location.href = '/project/main/main.html'
+  } else {
+    alert('입력정보를 확인하세요!')
+  }
+})
+
+    localStorage.setItem('productData', JSON.stringify(productData));
+    localStorage.setItem('cartData', JSON.stringify(cartData));

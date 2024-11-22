@@ -8,6 +8,7 @@
 </head>
 <body>
   <script src="login.js"></script>
+
   <header>
     <nav>
       <ul>
@@ -27,5 +28,10 @@
   <footer>
 
   </footer>
+  <script>
+    localStorage.setItem('memberData', JSON.stringify(memberData));
+    let logId = localStorage.getItem('logId')
+    let logName = localStorage.getItem('logName')
+  </script>
 </body>
 </html>
