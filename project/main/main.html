@@ -21,32 +21,41 @@
         <li><a href="/project/product/product.html">상품목록</a></li>
         <li><a href="#">게시판</a></li>
         <li><a href="/project/login/login.html">로그인</a></li>
-        <li><a href="#">장바구니</a></li>
+        <li><a href="/project/cart/cart.html">장바구니</a></li>
       </ul>
     </nav>
   </header>
-  <img src="../images/logo.jpg" alt="logo" class="logo">
-  <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active" data-bs-interval="1000">
-        <img src="../images/main1.jpg" class="d-inline-block" alt="...">
+
+  <a href="/project/main/main.html">
+    <img src="../images/logo.jpg" alt="logo" class="logo">
+  </a>
+
+  <a href="/project/cart/cart.html">
+    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="1000">
+          <img src="../images/main1.jpg" class="d-inline-block" alt="...">
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+          <img src="../images/main2.jpg" class="d-inline-block" alt="...">
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+          <img src="../images/main3.jpg" class="d-inline-block" alt="...">
+        </div>
       </div>
-      <div class="carousel-item" data-bs-interval="2000">
-        <img src="../images/main2.jpg" class="d-inline-block" alt="...">
-      </div>
-      <div class="carousel-item" data-bs-interval="2000">
-        <img src="../images/main3.jpg" class="d-inline-block" alt="...">
-      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
+  </a>
+
   <section>
 
   </section>
@@ -56,12 +65,11 @@
 
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script>
-
-    let logId = localStorage.getItem('logId')
-    let logName = localStorage.getItem('logName')
-    swal('로그인 성공!', logName + " 님 로그인되었습니다.", 'success')
-
+      let logId = localStorage.getItem('logId')
+      let logName = localStorage.getItem('logName')
+      swal('로그인 성공!', logName + " 님 로그인되었습니다.", 'success')
   </script>
+  
 </body>
 
 </html>
