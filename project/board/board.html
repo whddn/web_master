@@ -4,65 +4,51 @@
 <head>
   <meta charset="UTF-8" />
   <title>게시판</title>
-  <link rel="stylesheet" type="text/css" href="board.css" />
+  <link rel="stylesheet" href="board.css" />
 </head>
 
 <body>
-  <div id="brd_select">
-    <h4>게시판 목록</h4>
-    <form name="brd">
-      <input type="button" value="입력" name="btnInsert" />
-      <input type="text" name="findStr" id="findStr" />
-      <input type="button" value="검색" name="btnSearch" id="btnSearch" />
-    </form>
-    <div id="title">
-      <span class="serial">No</span>
-      <span class="subject">제목</span>
-      <span class="mName">작성자</span>
-      <span class="mDate">작성일</span>
-      <span class="hit">조회수</span>
-    </div>
-    <div id="list">
-      <div class="items">
-        <span class="serial">1</span>
-        <span class="subject"> <a href="#">제목1</a></span>
-        <span class="mName">엘렌</span>
-        <span class="mDate">2020-01-01</span>
-        <span class="hit">300</span>
-      </div>
-      <div class="items">
-        <span class="serial">2</span>
-        <span class="subject"> <a href="#">제목2</a></span>
-        <span class="mName">엘렌</span>
-        <span class="mDate">2020-01-01</span>
-        <span class="hit">300</span>
-      </div>
-      <div class="items">
-        <span class="serial">3</span>
-        <span class="subject"> <a href="#">제목3</a></span>
-        <span class="mName">엘렌</span>
-        <span class="mDate">2020-01-01</span>
-        <span class="hit">300</span>
-      </div>
-      <div class="items">
-        <span class="serial">4</span>
-        <span class="subject"> <a href="#">제목4</a></span>
-        <span class="mName">엘렌</span>
-        <span class="mDate">2020-01-01</span>
-        <span class="hit">300</span>
-      </div>
-    </div>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="/project/main/main.html">🏠홈으로</a></li>
+        <li><a href="/project/product/product.html">상품목록</a></li>
+        <li><a href="/project/board/board.html">게시판</a></li>
+        <li><a href="/project/login/login.html">로그인</a></li>
+        <li><a href="/project/cart/cart.html">장바구니</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+    <a href="/project/main/main.html" class="logo">
+      <img src="../images/logo.jpg" alt="logo">
+    </a>
   </div>
+  <table class="table">
+    <h2>게시판</h2>
+    <thead>
 
-  <script src="board.js"></script>
-  <script>
-    brd.btnSearch.click();
-    // 버튼클릭 이벤트 발생 (전체 리스트 조회하기 위해서)
-
-    /* 외부에서 스크립트 불러왔는데
-	다른 스크립트 작성하고 싶을때는
-	스크립트 또 열어서 작업해야함*/
-  </script>
+      <tr>
+        <td colspan="2">
+        </td>
+      </tr>
+      <tr class="header">
+        <td class="num">번호</td>
+        <td class="title">제목</td>
+        <td>작성자</td>
+        <td>작성날짜</td>
+      </tr>
+    </thead>
+    <tbody id="list">
+    </tbody>
+   
+  </table>
+  <br>
+  <table>
+    <tr>
+      <td><button onclick="location.href='write.html'">글쓰기</button></td>
+    </tr>
+  </table>
 </body>
 
 </html>
