@@ -29,16 +29,7 @@ function makeRow(friendInfo = {
       }
     })
   })
-  // 체크박스의 갯수와 체크된 체크박스의 갯수 => true / false
-  // let chks = document.querySelectorAll('tbody input[type="checkbox"]');
-  // let chkeds = document.querySelectorAll('tbody input[type="checkbox"]:checked')
-            // chks. length == chkeds.length ? true : false ; 밑에꺼랑 같은코드 //
-  // if(chks.length == chkeds.length){
-  //   document.querySelector('thead input[type="checkbox"]').checked = true
-  // }else{
-  //   document.querySelector('thead input[type="checkbox"]').checked = false
-  // }
-
+  
   td.appendChild(btn)
   tr.appendChild(td)
 
