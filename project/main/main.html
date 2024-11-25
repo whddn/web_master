@@ -52,12 +52,13 @@
   <footer>
 
   </footer>
-  
+
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script>
 
     let logId = localStorage.getItem('logId')
     let logName = localStorage.getItem('logName')
-
+    swal('로그인 성공!', logName + " 님 로그인되었습니다.", 'success')
 
   </script>
 </body>
