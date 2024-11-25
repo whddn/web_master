@@ -22,45 +22,75 @@
     // pcode, pname, price
     let productData = [{
         pcode: 'P001',
-        pname: '상의1',
+        pname: '블랙 원피스',
         price: 10000,
-        image: 'clothes1.jpg'
+        images: 'clothes1.jpg'
       },
       {
         pcode: 'P002',
-        pname: '상의2',
-        price: 1500,
-        image: 'clothes2.jpg'
+        pname: '블라우스 치마',
+        price: 15000,
+        images: 'clothes2.jpg'
       },
       {
         pcode: 'P003',
-        pname: '상의3',
-        price: 2500,
-        image: 'clothes3.jpg'
+        pname: '가디건',
+        price: 12500,
+        images: 'clothes3.jpg'
       },
       {
         pcode: 'P004',
-        pname: '하의1',
-        price: 5000,
-        image: 'clothes4.jpg'
+        pname: '청바지',
+        price: 20000,
+        images: 'clothes4.jpg'
       },
       {
         pcode: 'P005',
-        pname: '하의2',
-        price: 1500,
-        image: 'clothes5.jpg'
+        pname: '나시',
+        price: 5000,
+        images: 'clothes5.jpg'
       },
       {
         pcode: 'P006',
-        pname: '하의3',
-        price: 2500,
-        image: 'clothes6.jpg'
+        pname: '청치마',
+        price: 13000,
+        images: 'clothes6.jpg'
       },
       {
         pcode: 'P007',
-        pname: '하의4',
-        price: 3500,
-        image: 'clothes7.jpg'
+        pname: '검정 원피스',
+        price: 20100,
+        images: 'clothes7.jpg'
+      },
+      {
+        pcode: 'P008',
+        pname: '골지 티셔츠',
+        price: 7000,
+        images: 'clothes8.jpg'
+      },
+      {
+        pcode: 'P009',
+        pname: '기모 맨투맨 ',
+        price: 17000,
+        images: 'clothes9.jpg'
+      },
+      {
+        pcode: 'P0010',
+        pname: '앙골라 가디건',
+        price: 25000,
+        images: 'clothes10.jpg'
+      },
+      {
+        pcode: 'P0011',
+        pname: '꼬임 니트',
+        price: 19000,
+        images: 'clothes11.jpg'
+      },
+      {
+        pcode: 'P0012',
+        pname: '미니 스커트',
+        price: 12000,
+        images: 'clothes12.jpg'
       }
     ]
 
