@@ -18,8 +18,39 @@ productData.forEach(product => {
   document.querySelector('div.row').insertAdjacentHTML("beforeend", template)
 
 })
-document.querySelector('.btn.btn-outline-success').addEventListener('click', e =>{
-  alert("상품을 장바구니에 담았습니다")
+
+// 장바구니 담기
+document.querySelectorAll('a.btn-outline-success').forEach(item => {
+  item.addEventListener('click', e => {
+    // 기본기능 차단
+    e.preventDefault();
+    // {id, pcode, qty}
+    let id = localStorage.getItem('logId')
+    let pcode = e.target.closest('div.col').getAttribute('data-pcode') //closest : 태그를 가져오겠다
+    console.log(item, id, pcode)
+    // 장바구니에 id, pcode 이미 있으면 수량증가
+    let result = cartData.filter(cart => cart.id == id && cart.pcode == pcode)
+    if(result.length){ // 있으면 수량증가
+      cartData.forEach(cart => {
+        if(cart.id == id && cart.pcode == pcode){
+          cart.qty++ // 기존수량에 1 더하기
+          return;
+        }
+      })
+    }else{
+    // 없으면 추가
+    cartData.push({
+      id: id,
+      pcode: pcode,
+      qty: 1
+    })
+  }
+
+  // 스토리지에 저장
+    localStorage.setItem('cartData', JSON.stringify(cartData)) // 저장
+      alert("상품을 장바구니에 담았습니다")
+    })
+  })
+
   
-})
 

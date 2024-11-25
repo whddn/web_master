@@ -98,17 +98,17 @@
     let cartData = [{
         id: 'user01',
         pcode: 'P001',
-        qty: 2
+        qty: 1
       },
       {
         id: 'user01',
         pcode: 'P003',
-        qty: 5
+        qty: 1
       },
       {
         id: 'user01',
         pcode: 'P002',
-        qty: 3
+        qty: 1
       },
       {
         id: 'user02',
