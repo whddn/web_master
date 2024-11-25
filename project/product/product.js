@@ -10,7 +10,7 @@ productData.forEach(product => {
       <div class="card-body">
         <img src="../images/today.svg" height="16px">
         <h4 class="card-title">${product.pname}</h5>
-        <p class= "card-text" >₩${product.price}</p>
+        <p class= "card-text">₩${product.price}</p>
         <a href="#" class="btn btn-outline-success">장바구니 담기🎁</a>
       </div>
     </div>
@@ -48,7 +48,7 @@ document.querySelectorAll('a.btn-outline-success').forEach(item => {
 
   // 스토리지에 저장
     localStorage.setItem('cartData', JSON.stringify(cartData)) // 저장
-      alert("상품을 장바구니에 담았습니다")
+     alert("상품을 장바구니에 담았습니다")
     })
   })
 

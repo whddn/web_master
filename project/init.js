@@ -95,37 +95,38 @@
     ]
 
     // id, pcode, qty
-    let cartData = [{
-        id: 'user01',
-        pcode: 'P001',
-        qty: 1
-      },
-      {
-        id: 'user01',
-        pcode: 'P003',
-        qty: 1
-      },
-      {
-        id: 'user01',
-        pcode: 'P002',
-        qty: 1
-      },
-      {
-        id: 'user02',
-        pcode: 'P001',
-        qty: 3
-      },
-      {
-        id: 'user02',
-        pcode: 'P004',
-        qty: 4
-      },
-      {
-        id: 'user02',
-        pcode: 'P007',
-        qty: 2
-      }
-    ]
+    // let cartData = [{
+    //     id: 'user01',
+    //     pcode: 'P001',
+    //     qty: 1
+    //   },
+    //   {
+    //     id: 'user01',
+    //     pcode: 'P003',
+    //     qty: 1
+    //   },
+    //   {
+    //     id: 'user01',
+    //     pcode: 'P002',
+    //     qty: 1
+    //   },
+    //   {
+    //     id: 'user02',
+    //     pcode: 'P001',
+    //     qty: 3
+    //   },
+    //   {
+    //     id: 'user02',
+    //     pcode: 'P004',
+    //     qty: 4
+    //   },
+    //   {
+    //     id: 'user02',
+    //     pcode: 'P007',
+    //     qty: 2
+    //   }
+    // ]
+    
     // 객체의 정보를 활용해서 row 생성.
     function makeRow(obj = {}) {
       let tr = document.createElement('tr');
