@@ -79,7 +79,7 @@ div > article{
   float: left;
   margin-left: 10px;
   margin-bottom: 10px;
-  padding-left: 200px;
+  padding-left: 100px;
 }
 article > img{
   display: block;
@@ -88,4 +88,10 @@ article > img{
   height: 300px;
   width: 300px;
   text-align: center;
+}
+p{
+  padding: 20px;
+}
+span{
+  color: red;
 }
