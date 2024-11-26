@@ -18,45 +18,80 @@
     <ul>
       <li><a href="/project/main/main.html">🏠홈으로</a></li>
       <li><a href="/project/product/product.html">상품목록</a></li>
-      <li><a href="/project/board/board.html">게시판</a></li>
+      <li><a href="/project/board/board.html">Q&A</a></li>
       <li><a href="/project/login/login.html">로그인</a></li>
       <li><a href="/project/cart/cart.html">장바구니</a></li>
     </ul>
   </nav>
   </header>
 
-  <div>
+  <div class="img">
     <img src="../images/QnA.jpg" alt="QnA">
   </div>
   <br>
-  <h2>후기 게시판</h2>
+  <h2>Q&A</h2>
 
   <div id="show">
-  <table class="table">
-    <thead>
+    <table class="table">
       <tr>
-        <th>상품이미지</th>
-        <th>상품이름</th>
-        <th>제목</th>
-        <th>작성자</th>
-        <th>리뷰</th>
-        <th></th>
+        <th>이미지</th>
+        <td><input type="file" name="boardFile" id="file"></td>
       </tr>
-    </thead>
-    <tbody id="list">
-    </tbody>
-  </table>
+      <tr>
+        <th>상품정보</th>
+        <td>
+          <select name="boardProductname">
+            <option value="블랙 원피스">블랙 원피스</option>
+            <option>블라우스 치마</option>
+            <option>청바지</option>
+            <option>가디건</option>
+            <option>나시</option>
+            <option>청치마</option>
+            <option>검정 원피스</option>
+            <option>골지 티셔츠</option>
+            <option>기모 맨투맨</option>
+            <option>앙골라 가디건</option>
+            <option>꼬임 니트</option>
+            <option>미니 스커트</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>제목</th>
+        <td><input type="text" class="form-control" name="boardReview" placeholder="하고싶은 말을 적어주세요"></td>
+      </tr>
+      <tr>
+        <th>작성자</th>
+        <td><input type="text" name="boardName"></td>
+      </tr>
+      <tr>
+        <th>작성일</th>
+        <td><input type="date" name="boardDate"></td>
+      </tr>
+      <tr>
+        <td align="center" colspan="2">
+          <button type="button" class="btn btn-outline-success">작성하기</button>
+        </td>
+      </tr>
+    </table>
 
-  <table class="table">
-    <tr>
-      <th>이미지</th>
-      <td><input class="form-control" type="file" id="formFile"></td>
-    </tr>
-  </table>
-
+    <table class="table">
+      <thead>
+        <tr>
+          <th>상품이미지</th>
+          <th>상품정보</th>
+          <th>제목</th>
+          <th>작성자</th>
+          <th>작성일</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="list">
+      </tbody>
+    </table>
   </div>
-<script src="board.js"></script>
-
+  <script src="boardlist.js"></script>
+  <script src="board.js"></script>
 </body>
 
 </html>
