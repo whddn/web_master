@@ -83,6 +83,10 @@ div > article{
 }
 article > img{
   display: block;
+  opacity: 1;
+}
+img:hover{
+  opacity: 0.6;
 }
 .clothes{
   height: 300px;
@@ -94,4 +98,16 @@ p{
 }
 span{
   color: red;
+}
+.box{
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: rgb(149, 231, 48);
+  right: 20px;
+  bottom: 20px;
+  line-height: 60px;
+  color: white;
+  font-weight: bold;
 }
