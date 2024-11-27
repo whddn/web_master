@@ -554,7 +554,6 @@ progress {
   font-size: calc(1.375rem + 1.5vw);
   font-weight: 800;
   line-height: 1.2;
-  font-family: Monospace;
 }
 
 @media(min-width: 1200px) {
@@ -8269,7 +8268,6 @@ fieldset:disabled .btn {
 
 .fw-normal {
   font-weight: 400 !important;
-  font-family: monospace;
 }
 
 .fw-bold {
