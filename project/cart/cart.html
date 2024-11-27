@@ -112,6 +112,9 @@
   </div>
 
   <script>
+    document.querySelector('button.btn.border-secondary').addEventListener('click', e =>{
+      alert('주문이 완료되었습니다!')
+    })
     let cartData = JSON.parse(localStorage.getItem('cartData')); // 현재 장바구니 정보 가져오기.
     const productData = JSON.parse(localStorage.getItem('productData')); // 현재 상품목록 가져오기.
 
