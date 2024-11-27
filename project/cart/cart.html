@@ -4,16 +4,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Raleway:wght@600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Dongle&family=Lacquer&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Dongle&family=Lacquer&family=Parkinsans:wght@300..800&display=swap" rel="stylesheet">
   <title>장바구니</title>
   <style>
-    .display-61{margin-top: 60px;}
+    .display-61 {
+      margin-top: 60px;
+      font-family: "Parkinsans", sans-serif;
+    }
+   .display-6, .mb-0{
+    margin-top: 30px;
+   }
+    p{
+      color: white;
+      font-weight: bold;
+    }
   </style>
 
   <!-- Google Web Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Raleway:wght@600;800&display=swap"
-    rel="stylesheet">
 
   <!-- Icon Font Stylesheet -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
@@ -30,6 +41,7 @@
   <link href="css/style.css" rel="stylesheet">
   <link rel="stylesheet" href="../main/main.css">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+
 </head>
 
 <body>
@@ -46,7 +58,7 @@
     </nav>
   </header>
 
-  <h1 class="display-61 mb-4">장바구니 <span class="fw-normal">목록</span></h1>
+  <h1 class="display-61 mb-4" style="color:rgb(112, 57, 128)">장바구니 목록 </h1>
 
   <div class="container-fluid py-5">
     <div class="container py-5">
@@ -69,7 +81,7 @@
         </table>
       </div>
 
-      
+
 
       <div class="row g-4 justify-content-end">
         <div class="col-8"></div>
@@ -78,16 +90,14 @@
             <div class="p-4">
               <h1 class="display-6 mb-4">장바구니 <span class="fw-normal">목록</span></h1>
               <div class="d-flex justify-content-between mb-4">
-                <h5 class="mb-0 me-4">총 구매금액:</h5>
+                <h5 class="mb-0 me-4">총 구매금액</h5>
                 <p class="mb-1">$96.00</p>
               </div>
               <div class="d-flex justify-content-between">
-                <h5 class="mb-0 me-4">배송비</h5>
-                <div class="">
-                  <p class="mb-0"> 3000원</p>
-                </div>
+                <h5 class="mb-0 me-4">배송비 </h5>
+                  <p class="mb-0">3000원</p>
               </div>
-              <p class="mb-0 text-end">(2만원 이상 무료배송)</p>
+              <p class="mb-0 text-end">(4만원 이상 무료배송)</p>
             </div>
             <div class="py-4 mb-4 border-top border-bottom d-flex justify-content-between">
               <h5 class="mb-0 ps-4 me-4">결제 예정금액</h5>
@@ -125,33 +135,33 @@
                           </div>
                         </th>
                         <td>
-                          <p class="mb-0 mt-4">${prodInfo.pname}</p>
+                          <p class="mb-11 mt-4">${prodInfo.pname}</p>
                         </td>
                         <td>
-                          <p class="mb-0 mt-4">${prodInfo.price} 원</p>
+                          <p class="mb-11 mt-4">${prodInfo.price} 원</p>
                         </td>
                         <td>
                           <div class="input-group quantity mt-4" style="width: 100px;">
                             <div class="input-group-btn">
-                              <button class="btn btn-sm btn-minus rounded-circle bg-light border">
+                              <button class="btn btn-sm btn-minus bg-light border">
                                 <i class="fa fa-minus"></i>
                               </button>
                             </div>
                             <input type="text" class="form-control form-control-sm text-center border-0"
                               value="${cart.qty}">
                             <div class="input-group-btn">
-                              <button class="btn btn-sm btn-plus rounded-circle bg-light border">
+                              <button class="btn btn-sm btn-plus bg-light border">
                                 <i class="fa fa-plus"></i>
                               </button>
                             </div>
                           </div>
                         </td>
                         <td>
-                          <p class="mb-0 mt-4">${prodInfo.price * cart.qty} 원</p>
+                          <p class="mb-11 mt-4">${prodInfo.price * cart.qty} 원</p>
                         </td>
                         <td>
-                          <button class="btn btn-md rounded-circle bg-light border mt-4">
-                            <i class="fa fa-times text-warning"></i>
+                          <button class="btn btn-md  bg-light border mt-4">
+                            <i class="fa fa-times text-light"></i>
                           </button>
                         </td>
                       </tr>`;
@@ -171,9 +181,9 @@
         // 현재수량 + 1
         let currentQty = parseInt(e.target.closest('div.quantity').children[1].value);
         currentQty++;
-        if(currentQty <= 10){
+        if (currentQty <= 10) {
           currentQty++
-        }else{
+        } else {
           return;
         }
         e.target.closest('div.quantity').children[1].value = currentQty;
@@ -181,7 +191,7 @@
         let price = e.target.closest('tr').children[2].firstElementChild.innerText; // 2000 원
         price = parseInt(price.replace('원', '')); // 2000 원 -> 2000
         e.target.closest('tr').children[4].firstElementChild.innerText = price * currentQty + " 원";
-        
+
         totalSum();
         saveQty(logId, pcode, 1);
       });
@@ -195,15 +205,15 @@
         // 현재수량 - 1
         let currentQty = parseInt(e.target.closest('div.quantity').children[1].value);
         currentQty--;
-        if(currentQty < 1){
+        if (currentQty < 1) {
           event.preventDefault()
-        }else{
+        } else {
           e.target.closest('div.quantity').children[1].value = currentQty;
-        
-        // 가격.
-        let price = e.target.closest('tr').children[2].firstElementChild.innerText; // 2000 원
-        price = parseInt(price.replace('원', '')); // 2000 원 -> 2000
-        e.target.closest('tr').children[4].firstElementChild.innerText = price * currentQty + " 원";
+
+          // 가격.
+          let price = e.target.closest('tr').children[2].firstElementChild.innerText; // 2000 원
+          price = parseInt(price.replace('원', '')); // 2000 원 -> 2000
+          e.target.closest('tr').children[4].firstElementChild.innerText = price * currentQty + " 원";
         }
         totalSum();
         saveQty(logId, pcode, -1);
@@ -244,7 +254,7 @@
     }
 
     // 합계금액 계산.
-    
+
     function totalSum() {
       // 각 tr의 금액부분("4000 원") -> "4000" -> 4000 변경 후 합계.
       let sum = 0;
@@ -254,7 +264,12 @@
           let subTotal = item.firstElementChild.innerText;
           subTotal = parseInt(subTotal.replace("원", ""));
           sum += subTotal;
-          realsum = sum + 3000
+          if(sum > 40000 ){
+            realsum = sum
+          }else{
+
+            realsum = sum + 3000
+          }
         })
       // Cart Total 의 Total 의 위치에 합산결과 출력.
       document.querySelector('p.mb-1').innerText = sum + " 원";
@@ -265,9 +280,9 @@
     //
   </script>
 
-<a href="#header">
-  <div class="box">⬆ TOP</div>
-</a>
+  <a href="#header">
+    <div class="box">⬆ TOP</div>
+  </a>
 
 </body>
 
