@@ -194,7 +194,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 25px;
-    background: linear-gradient(rgba(255, 181, 36, 0.7), rgba(255, 181, 36, 0.7));
+    background: linear-gradient(rgba(35, 133, 232, 0.7), rgba(218, 58, 227, 0.7));
 }
 
 .carousel-control-next,
