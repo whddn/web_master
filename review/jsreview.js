@@ -1,24 +1,36 @@
 // jsreview.js => 그 자체가 <script/> 태그
 // HTML, CSS 작성 불가
 
-document.getElementById('insertBtn')
-  .addEventListener('click', function (event) {
-    /*
-      -- 필드
-      event.target;
-      event.currentTarget;
-      -- 메소드
-      event.preventDefault();
-      event.stopPropagation();
-    */
-    console.log('해당 이벤트 발생 시 작업');
+document.addEventListener('DOMContentLoaded', function (event) {
+  /*
+    -- 필드
+    event.target;        // 고정, 실제 이벤트 등록 태그
+    event.currentTarget; // 유동, 이벤트 핸들러가 등록된 태그
+    -- 메소드
+    event.preventDefault(); // 각 이벤트의 기본 동작을 일시정지 (form태그 submit, a태그 href만 한다고 보면 됨)
+    event.stopPropagation(); // 이벤트 버블링 정지
+  */
+  console.log('해당 이벤트 발생 시 작업');
+  // DOMContentLoaded : 화면을 구성하는 DOM이 완성된 시점
+  // => 실제 이벤트 처리를 등록하는 경우
+  document.getElementById('insertBtn').addEventListener('click', insertTrTag);
 
-  }); // 특정 태그의 이벤트 처리 등록
+  let trList = document.querySelectorAll('tbody > tr');
+  trList.forEach(trTag => {
 
-document.getElementById('insertBtn').addEventListener('click', insertTrTag);
+
+  });
+}); // 특정 태그의 이벤트 처리 등록
+
 
 function insertTrTag(event) {
   let trTag = document.createElement('tr');
+  trTag.addEventListener('click', function (e) {
+    if (e.target.tagName == 'SELECT') return;
+
+    console.log('target Tag', e.target);
+    console.log('currentTarget Tag', e.currentTarget);
+  });
 
   // 체크박스
   let tdTag = document.createElement('td');
@@ -71,10 +83,23 @@ function insertTrTag(event) {
   tdTag.append(inputTag);
   trTag.append(tdTag);
 
+  // 삭제
+  tdTag = document.createElement('td');
+  let btnTag = document.createElement('button');
+  btnTag.type = 'button';
+  btnTag.textContent = '삭제';
+  btnTag.addEventListener('click', function(event){
+    let delBtn = event.currentTarget;
+    let trTag = delBtn.closest('tr');
+    trTag.remove();
+  });
+  tdTag.append(btnTag);
+  trTag.append(tdTag);
+
   console.log(trTag); // 단순 변수의 값
 
   // 기존 DOM에 등록 된 태그에 추가
-  document.querySelector('table').append(trTag);
+  document.querySelector('tbody').append(trTag);
 
 }
 
